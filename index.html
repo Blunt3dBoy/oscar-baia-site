@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oscar Baia — DJ &amp; Producer, Lisbon</title>
+  <meta name="description" content="Oscar Baia — DJ from Lisbon, Portugal. Four decades behind the decks: eclectic selector, three-deck technician, resident of Lisbon's landmark clubs. Sets, dates and bookings." />
+  <meta name="theme-color" content="#0A0A0C" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Oscar Baia — DJ, Lisbon" />
+  <meta property="og:description" content="Four decades behind the decks. Eclectic selector and party icon of Lisbon nightlife. Sets, dates and bookings." />
+  <meta property="og:image" content="/assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://oscarbaia.com/" />
+
+  <script>
+    /* Always open at the hero: strip any incoming #hash, disable scroll
+       restoration, and hold the top until the visitor scrolls themselves. */
+    (function () {
+      try {
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        if (location.hash !== "#hero") {
+          history.replaceState(null, "", location.pathname + location.search + "#hero");
+        }
+      } catch (e) {}
+      var moved = false;
+      function release() { moved = true; }
+      ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (t) {
+        addEventListener(t, release, { once: true, passive: true });
+      });
+      function pin() { if (!moved && window.scrollY !== 0) window.scrollTo(0, 0); }
+      pin();
+      addEventListener("DOMContentLoaded", pin);
+      addEventListener("load", pin);
+      [30, 120, 300, 600, 1000].forEach(function (ms) { setTimeout(pin, ms); });
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=202609040230" />
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">OB</div>
+    <div class="preloader__bar"><span id="preloaderFill"></span></div>
+  </div>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__brand" aria-label="Oscar Baia — home">
+      <img src="/assets/img/logo-oscarbaia-white.png" alt="Oscar Baia" width="1400" height="312" />
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#follow" data-i18n="nav.follow">Follow Me</a>
+      <a href="#discography" data-i18n="nav.discography">Discography</a>
+      <a href="#sounds" data-i18n="nav.sounds">Sets &amp; Shows</a>
+      <a href="#shows" data-i18n="nav.shows">Events</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="langswitch" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang-btn="pt" aria-pressed="false">PT</button>
+      </div>
+      <a href="#bookings" class="btn btn--sm nav__cta" data-magnetic data-i18n="nav.bookings">Bookings</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#follow"><span class="mobile-menu__idx">01</span> <span data-i18n="nav.follow">Follow Me</span></a>
+      <a href="#discography"><span class="mobile-menu__idx">02</span> <span data-i18n="nav.discography">Discography</span></a>
+      <a href="#sounds"><span class="mobile-menu__idx">03</span> <span data-i18n="nav.sounds">Sets &amp; Shows</span></a>
+      <a href="#shows"><span class="mobile-menu__idx">04</span> <span data-i18n="nav.shows">Events</span></a>
+      <a href="#about"><span class="mobile-menu__idx">05</span> <span data-i18n="nav.about">About</span></a>
+      <a href="#gallery"><span class="mobile-menu__idx">06</span> <span data-i18n="nav.gallery">Gallery</span></a>
+      <a href="#bookings"><span class="mobile-menu__idx">07</span> <span data-i18n="nav.bookings">Bookings</span></a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <div class="langswitch langswitch--lg" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang-btn="pt" aria-pressed="false">PT</button>
+      </div>
+      <a href="https://www.instagram.com/oscar.baia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/share/19bt6VAiy2/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@oscarbaiadj" data-social-tiktok target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.mixcloud.com/oscarbaia/" target="_blank" rel="noopener">Mixcloud</a>
+      <a href="https://soundcloud.com/oscar-baia" target="_blank" rel="noopener">SoundCloud</a>
+    </div>
+  </div>
+
+  <!-- ============ BACKDROP ============ -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop__glow backdrop__glow--ember" data-parallax="0.12"></div>
+    <div class="backdrop__glow backdrop__glow--blue" data-parallax="0.06"></div>
+    <div class="backdrop__grain"></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <figure class="hero__photo" aria-hidden="true">
+        <div class="hero__photo-mask">
+          <img src="/assets/img/oscar-hero.jpg" alt="" width="1400" height="933" fetchpriority="high" />
+        </div>
+      </figure>
+
+      <div class="hero__inner">
+        <p class="hero__kicker">
+          <span class="dot"></span> <span data-i18n="hero.kicker">DJ · Lisboa, Portugal — since 1986</span>
+        </p>
+        <h1 class="hero__title">
+          <span class="line"><span class="word">Oscar</span></span>
+          <span class="line"><span class="word word--outline">Baia</span></span>
+        </h1>
+        <p class="hero__sub" data-i18n="hero.sub">
+          Four decades behind the decks. An eclectic selector, a three-deck
+          technician, and a party icon of Lisbon nightlife.
+        </p>
+        <div class="hero__actions">
+          <a href="#sounds" class="btn" data-magnetic>
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <span data-i18n="hero.listen">Listen</span>
+          </a>
+          <a href="#bookings" class="btn btn--ghost" data-magnetic data-i18n="hero.book">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span data-i18n="hero.scroll">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+      <div class="hero__credit" aria-hidden="true">Photo — Alexandra Guerreiro</div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span data-i18n="mq.1">Eclectic</span><span>—</span><span class="o" data-i18n="mq.2">Three decks</span><span>—</span><span data-i18n="mq.3">Party icon</span><span>—</span><span class="o" data-i18n="mq.4">Lisboa</span><span>—</span><span data-i18n="mq.5">Since 1986</span><span>—</span>
+        <span data-i18n="mq.1">Eclectic</span><span>—</span><span class="o" data-i18n="mq.2">Three decks</span><span>—</span><span data-i18n="mq.3">Party icon</span><span>—</span><span class="o" data-i18n="mq.4">Lisboa</span><span>—</span><span data-i18n="mq.5">Since 1986</span><span>—</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="section__head" data-reveal>
+        <span class="section__num">01</span>
+        <h2 class="section__title" data-i18n="about.title">About</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__body" data-reveal>
+          <p class="about__lead" data-i18n="about.lead">
+            It started almost by chance — an unplanned stand-in for the resident
+            DJ at a club called Skylab. The year was 1986. The career that began
+            that night is still going.
+          </p>
+          <p data-i18n="about.p1">
+            In 1994, an invitation to join the X-Club DJ agency put Oscar in
+            front of a fast-growing crowd. A rare command of three-deck mixing
+            quickly carried him to the top of the Portuguese DJ roster and made
+            him an unavoidable presence in the country's dance scene.
+          </p>
+          <p data-i18n="about.p2">
+            He was one of the first Portuguese DJs to build an international
+            career — Madrid, Barcelona and Ibiza, Frankfurt and Berlin, Rome and
+            Rimini, Paris, Cape Town and Johannesburg, Toronto and Montreal,
+            Osaka, London, Moscow, Dubai.
+          </p>
+          <p data-i18n="about.p3">
+            Oscar refuses to draw a line around his taste. An eclectic selection
+            and an exquisite technique let him play the music he loves while
+            moving a whole room — the reason he has held residencies in Lisbon's
+            landmark clubs, from Trumps, Benzina and Alcântara-Mar to Kings &amp;
+            Queens, Garage, Indústria and O2LX. Since 1995 the Azores have named
+            him their ambassador of dance music, and in 2008 he began a weekly
+            residency at the mythical Kremlin — his favourite club since the
+            beginning.
+          </p>
+          <ul class="about__stats" data-counter-group>
+            <li><span class="num" data-count="39">0</span><span class="lbl" data-i18n="about.stat1">Years on the decks</span></li>
+            <li><span class="num" data-count="12">0</span><span class="lbl" data-i18n="about.stat2">Countries played</span></li>
+            <li><span class="num" data-count="8">0</span><span class="lbl" data-i18n="about.stat3">Landmark residencies</span></li>
+          </ul>
+        </div>
+        <aside class="about__side" data-reveal>
+          <h3 data-i18n="about.side1">Resident at</h3>
+          <p class="about__side-list" data-i18n="about.residencies">
+            Kremlin · Trumps · Benzina · Alcântara-Mar · Kings &amp; Queens ·
+            Garage · Indústria · O2LX
+          </p>
+          <h3 data-i18n="about.side2">On the road</h3>
+          <p class="about__side-list" data-i18n="about.road">
+            USA · Spain · Germany · Italy · France · South Africa · Canada ·
+            Japan · United Kingdom · Russia · UAE
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SOUNDS ============ -->
+    <section class="section sounds" id="sounds">
+      <div class="section__head" data-reveal>
+        <span class="section__num">02</span>
+        <h2 class="section__title" data-i18n="sounds.title">Sets &amp; Shows</h2>
+      </div>
+
+      <article class="feature" data-reveal>
+        <div class="feature__meta">
+          <p class="kicker" data-i18n="sounds.featkicker">Listen</p>
+          <h3 data-i18n="sounds.feattitle">Sets, shows &amp; selections</h3>
+          <p class="feature__desc" data-i18n="sounds.featdesc">
+            Recorded sets from clubs and open-airs — four decades of selection.
+            Press play, then follow to catch the next one.
+          </p>
+          <div class="feature__controls">
+            <a class="btn btn--sm" href="https://www.mixcloud.com/oscarbaia/" target="_blank" rel="noopener" data-magnetic data-i18n="sounds.followMc">Follow on Mixcloud</a>
+            <a href="https://soundcloud.com/oscar-baia" target="_blank" rel="noopener" class="feature__ext">
+              <span data-i18n="sounds.followSc">Follow on SoundCloud</span> →
+            </a>
+          </div>
+        </div>
+
+        <div class="players">
+          <div class="players__panel">
+            <iframe title="Oscar Baia on Mixcloud" loading="lazy"
+              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&autoplay=0&feed=%2Foscarbaia%2F"
+              width="100%" height="400" frameborder="0"
+              allow="autoplay; encrypted-media; fullscreen"></iframe>
+          </div>
+          <noscript>
+            <a href="https://www.mixcloud.com/oscarbaia/">Listen to Oscar Baia on Mixcloud</a>
+          </noscript>
+        </div>
+      </article>
+
+      <div class="releases" id="discography" data-reveal>
+        <div class="releases__head">
+          <h3 data-i18n="sounds.discTitle">Discography</h3>
+          <a class="feature__ext" href="https://www.beatport.com/artist/oscar-baia/248069" target="_blank" rel="noopener">
+            <span data-i18n="sounds.discAll">Full catalogue on Beatport</span> →
+          </a>
+        </div>
+        <!-- auto:releases (regenerated from data/releases.json by scripts/build.mjs — do not hand-edit) -->
+        <ul class="releaselist">
+          <li>
+            <a href="https://www.beatport.com/release/from-the-box-vi/5741868" target="_blank" rel="noopener">
+              <span class="releaselist__year">2025</span>
+              <span class="releaselist__name">Desencontrados</span>
+              <span class="releaselist__meta">Dkult &amp; Oscar Baia · #thatechno</span>
+              <span class="releaselist__go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.beatport.com/release/i-am-worried/5096308" target="_blank" rel="noopener">
+              <span class="releaselist__year">2025</span>
+              <span class="releaselist__name">I Am Worried</span>
+              <span class="releaselist__meta">Lisbon Journeys Records · incl. DKult, SMASH (PT) &amp; HYKAN remixes</span>
+              <span class="releaselist__go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.beatport.com/release/back-to-kremlin/1048393" target="_blank" rel="noopener">
+              <span class="releaselist__year">2013</span>
+              <span class="releaselist__name">Back To Kremlin</span>
+              <span class="releaselist__meta">Notorious B · Oscar Baia &amp; Nuno E remix · Sunora Recordings</span>
+              <span class="releaselist__go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.beatport.com/release/xavi/997431" target="_blank" rel="noopener">
+              <span class="releaselist__year">2012</span>
+              <span class="releaselist__name">Xavi</span>
+              <span class="releaselist__meta">Anonima · incl. Notoriousb &amp; Miguel Matoz remixes</span>
+              <span class="releaselist__go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      <!-- /auto:releases -->
+      </div>
+    </section>
+
+    <!-- ============ SHOWS ============ -->
+    <section class="section shows" id="shows">
+      <div class="section__head" data-reveal>
+        <span class="section__num">03</span>
+        <h2 class="section__title" data-i18n="shows.title">Events</h2>
+      </div>
+      <!-- auto:events (regenerated from data/events.json by scripts/build.mjs — do not hand-edit) -->
+      <p class="shows__label" data-reveal data-i18n="shows.upcoming">Upcoming</p>
+      <ul class="showlist">
+        <li class="show" data-reveal>
+          <span class="show__date"><b>17.10</b> 2026</span>
+          <span class="show__venue">Atmøspheree · NĀDA</span>
+          <span class="show__city" data-city="Prior Velho">Prior Velho, PT</span>
+          <a class="show__status is-open" href="https://shotgun.live/en/events/atmospheree" target="_blank" rel="noopener" data-i18n="show.tickets">Tickets</a>
+        </li>
+      </ul>
+      <p class="shows__lineup" data-reveal>
+        w/ Dylan Drazen, A.Paul, DJ Link, HUMA-NØYD, Nuno Clãm, Viktor Barroz, Laura Fox
+      </p>
+
+      <p class="shows__label" data-reveal data-i18n="shows.recent">Recent</p>
+      <ul class="showlist showlist--past">
+        <li class="show show--past" data-reveal>
+          <span class="show__date"><b>08.08</b> 2026</span>
+          <span class="show__venue">Invuctus Music — Era Uma Vez no Porto</span>
+          <span class="show__city" data-city="Porto">Porto, PT</span>
+        </li>
+        <li class="show show--past" data-reveal>
+          <span class="show__date"><b>26.06</b> 2026</span>
+          <span class="show__venue">Electronic Chaos · NĀDA</span>
+          <span class="show__city" data-city="Prior Velho">Prior Velho, PT</span>
+        </li>
+        <li class="show show--past" data-reveal>
+          <span class="show__date"><b>28.03</b> 2025</span>
+          <span class="show__venue">Temple pres. Steve Parry (UK)</span>
+          <span class="show__city" data-city="Temple Club">Temple Club, Lisboa</span>
+        </li>
+        <li class="show show--past" data-reveal>
+          <span class="show__date"><b>15.06</b> 2024</span>
+          <span class="show__venue">Temple pres. Oscar Baía &amp; Géninho</span>
+          <span class="show__city" data-city="Temple Club">Temple Club, Lisboa</span>
+        </li>
+        <li class="show show--past" data-reveal>
+          <span class="show__date"><b>12.02</b> 2024</span>
+          <span class="show__venue">Temple Carnival Special</span>
+          <span class="show__city" data-city="Lisboa">Lisboa, PT</span>
+        </li>
+      </ul>
+      <!-- /auto:events -->
+
+      <p class="shows__foot" data-reveal>
+        <a href="https://shotgun.live/en/artists/oscar-baia" target="_blank" rel="noopener" data-i18n="shows.foot">Follow on Shotgun for new dates →</a>
+      </p>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section gallery" id="gallery">
+      <div class="section__head" data-reveal>
+        <span class="section__num">04</span>
+        <h2 class="section__title" data-i18n="gallery.title">Gallery</h2>
+      </div>
+      <div class="gallery__grid" data-reveal>
+        <figure class="tile tile--tall" data-parallax-tile>
+          <img src="/assets/img/oscar-nyc.jpg" alt="Oscar Baia — portrait" loading="lazy" decoding="async" width="1400" height="3491" />
+          <figcaption>Portrait</figcaption>
+        </figure>
+        <figure class="tile" data-parallax-tile>
+          <img src="/assets/img/oscar-studio.jpg" alt="Oscar Baia in the studio" loading="lazy" decoding="async" width="1100" height="1100" />
+          <figcaption>Studio</figcaption>
+        </figure>
+        <figure class="tile" data-parallax-tile>
+          <img src="/assets/img/oscar-bw.jpg" alt="Oscar Baia — black &amp; white portrait" loading="lazy" decoding="async" width="1200" height="800" />
+          <figcaption>Photo — A. Guerreiro</figcaption>
+        </figure>
+        <figure class="tile tile--wide" data-parallax-tile>
+          <img src="/assets/img/oscar-live.jpg" alt="Oscar Baia playing to a full room" loading="lazy" decoding="async" width="1100" height="1100" />
+          <figcaption>Live</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ BOOKINGS ============ -->
+    <section class="section bookings" id="bookings">
+      <div class="section__head" data-reveal>
+        <span class="section__num">05</span>
+        <h2 class="section__title" data-i18n="bookings.title">Bookings</h2>
+      </div>
+      <div class="bookings__grid">
+        <div class="bookings__info" data-reveal>
+          <p class="bookings__lead" data-i18n="bookings.lead">
+            Available worldwide. For dates and enquiries, get in touch directly.
+          </p>
+          <dl class="bookings__contacts">
+            <div>
+              <dt data-i18n="bookings.c1">Bookings &amp; enquiries</dt>
+              <dd><a href="mailto:oscarbaia3@gmail.com">oscarbaia3@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="bookings.c2">Phone</dt>
+              <dd><a href="mailto:oscarbaia3@gmail.com?subject=Phone%20number%20request" data-i18n="bookings.c2link">Available on request — email →</a></dd>
+            </div>
+          </dl>
+
+          <div class="presskit">
+            <p class="presskit__label" data-i18n="bookings.c3">Press kit</p>
+            <a class="btn btn--ghost presskit__btn" href="/assets/press/oscar-baia-press-kit.zip" download data-magnetic>
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+              </span>
+              <span data-i18n="bookings.c3link">Download press kit</span>
+              <span class="presskit__size">.ZIP · 5 MB</span>
+            </a>
+            <p class="presskit__note" data-i18n="bookings.c3note">
+              Bios (EN / PT), press photos and logo. Photo — Alexandra Guerreiro.
+            </p>
+          </div>
+
+          <div class="bookings__social">
+            <a href="https://www.instagram.com/oscar.baia" target="_blank" rel="noopener" data-magnetic>Instagram</a>
+            <a href="https://www.facebook.com/share/19bt6VAiy2/" target="_blank" rel="noopener" data-magnetic>Facebook</a>
+            <a href="https://www.tiktok.com/@oscarbaiadj" data-social-tiktok target="_blank" rel="noopener" data-magnetic>TikTok</a>
+            <a href="https://www.mixcloud.com/oscarbaia/" target="_blank" rel="noopener" data-magnetic>Mixcloud</a>
+            <a href="https://soundcloud.com/oscar-baia" target="_blank" rel="noopener" data-magnetic>SoundCloud</a>
+          </div>
+        </div>
+
+        <form class="bookings__form" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="bf-name" data-i18n="form.name">Name / Company</label>
+            <input id="bf-name" name="name" type="text" autocomplete="organization" required />
+          </div>
+          <div class="field">
+            <label for="bf-email" data-i18n="form.email">Email</label>
+            <input id="bf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="bf-date" data-i18n="form.date">Event date</label>
+            <input id="bf-date" name="date" type="text" data-i18n-ph="form.datePh" placeholder="e.g. 14 March 2027" />
+          </div>
+          <div class="field">
+            <label for="bf-details" data-i18n="form.details">Venue, city, capacity, set length</label>
+            <textarea id="bf-details" name="details" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--wide" data-magnetic data-i18n="form.send">Send enquiry</button>
+          <p class="form__hint" id="formHint" role="status" data-i18n="form.hint">
+            Opens in your email app.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__cta" data-reveal>
+        <p class="kicker" data-i18n="footer.newsletter">Newsletter</p>
+        <h2 data-i18n="footer.subtitle">New sets &amp; dates, a few times a year.</h2>
+        <form class="footer__sub" id="subForm" novalidate>
+          <input type="email" name="email" aria-label="Email address" placeholder="you@email.com" required />
+          <button type="submit" class="btn btn--sm" data-magnetic data-i18n="footer.subscribe">Subscribe</button>
+        </form>
+        <p class="footer__sub-hint" id="subHint" role="status"></p>
+      </div>
+
+      <div class="footer__follow" id="follow" data-reveal>
+        <p class="kicker" data-i18n="footer.follow">Follow</p>
+        <ul class="social">
+          <li><a href="https://www.instagram.com/oscar.baia" target="_blank" rel="noopener" data-magnetic>Instagram <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.facebook.com/share/19bt6VAiy2/" target="_blank" rel="noopener" data-magnetic>Facebook <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.tiktok.com/@oscarbaiadj" data-social-tiktok target="_blank" rel="noopener" data-magnetic>TikTok <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.mixcloud.com/oscarbaia/" target="_blank" rel="noopener" data-magnetic>Mixcloud <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://soundcloud.com/oscar-baia" target="_blank" rel="noopener" data-magnetic>SoundCloud <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <img class="footer__word" src="/assets/img/logo-oscarbaia-white.png" alt="" width="1400" height="312" loading="lazy" />
+
+    <div class="footer__base">
+      <span>© <span id="year">2026</span> Oscar Baia. <span data-i18n="footer.rights">Lisboa, Portugal.</span></span>
+      <a href="#hero" class="footer__top" data-magnetic data-i18n="footer.top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/js/i18n.js?v=202609040230" defer></script>
+  <script src="/assets/js/main.js?v=202609040230" defer></script>
+</body>
+</html>

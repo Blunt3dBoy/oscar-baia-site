@@ -1,0 +1,14 @@
+{
+  "name": "oscar-baia-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "scrape": "node scripts/scrape.mjs",
+    "refresh": "node scripts/scrape.mjs && node scripts/build.mjs",
+    "deploy": "./deploy.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

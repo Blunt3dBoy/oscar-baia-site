@@ -1,0 +1,65 @@
+name: Refresh & deploy
+
+on:
+  schedule:
+    # Every Monday 06:00 UTC — scrape Shotgun + Beatport, rebuild, deploy
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}       # manual "Run workflow" button
+  push:
+    branches: [main]           # also deploy on normal code pushes
+    paths-ignore:
+      - "README.md"
+      - "DEPLOY.md"
+      - "AUTOMATION.md"
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: write              # to commit refreshed data/*.json
+
+jobs:
+  refresh-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Playwright only needed for the scheduled/manual scrape
+      - name: Install Playwright
+        if: github.event_name != 'push'
+        run: |
+          npm install --no-save playwright@^1.48.0
+          npx playwright install --with-deps chromium
+
+      - name: Scrape Shotgun events
+        if: github.event_name != 'push'
+        run: node scripts/scrape.mjs
+
+      - name: Commit refreshed events
+        if: github.event_name != 'push'
+        run: |
+          git config user.name  "oscarbaia-bot"
+          git config user.email "actions@users.noreply.github.com"
+          node scripts/build.mjs
+          if [ -n "$(git status --porcelain data/ index.html)" ]; then
+            git add data/ index.html
+            git commit -m "chore: refresh events [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Build dist
+        run: scripts/make-dist.sh
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name oscar-baia --branch main --commit-dirty=true

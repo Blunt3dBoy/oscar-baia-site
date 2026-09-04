@@ -1,0 +1,21 @@
+{
+  "updated": "2026-09-04",
+  "source": "https://shotgun.live/en/artists/oscar-baia",
+  "upcoming": [
+    {
+      "date": "2026-10-17",
+      "name": "Atmøspheree · NĀDA",
+      "city": "Prior Velho, PT",
+      "url": "https://shotgun.live/en/events/atmospheree",
+      "status": "tickets",
+      "lineup": "Dylan Drazen, A.Paul, DJ Link, HUMA-NØYD, Nuno Clãm, Viktor Barroz, Laura Fox"
+    }
+  ],
+  "past": [
+    { "date": "2026-08-08", "name": "Invuctus Music — Era Uma Vez no Porto", "city": "Porto, PT", "url": "https://shotgun.live/en/events/invuctus-music-oscar-baia" },
+    { "date": "2026-06-26", "name": "Electronic Chaos · NĀDA", "city": "Prior Velho, PT", "url": "https://shotgun.live/en/events/electronic-chaos" },
+    { "date": "2025-03-28", "name": "Temple pres. Steve Parry (UK)", "city": "Temple Club, Lisboa", "url": "https://shotgun.live/en/events/temple-presents-steve-parry" },
+    { "date": "2024-06-15", "name": "Temple pres. Oscar Baía & Géninho", "city": "Temple Club, Lisboa", "url": "https://shotgun.live/en/events/temple-presents-oscar-baia-x-geninho" },
+    { "date": "2024-02-12", "name": "Temple Carnival Special", "city": "Lisboa, PT", "url": "https://shotgun.live/en/events/temple-presents-lina" }
+  ]
+}
