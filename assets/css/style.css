@@ -34,11 +34,13 @@
 
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
-#discography, #follow { scroll-margin-top: 90px; }
+html {
+  scroll-padding-top: 90px;
+  overflow-x: clip;               /* stops sideways scroll without breaking anchor jumps */
+  -webkit-text-size-adjust: 100%;
+}
 #hero { scroll-margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
@@ -53,7 +55,7 @@ body {
   font-size: var(--step-0);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; display: block; }
@@ -311,8 +313,8 @@ body.menu-open .nav__toggle span:nth-child(2) { transform: translateY(-4px) rota
 .mobile-menu {
   position: fixed; inset: 0; z-index: 490;
   background: var(--bg);
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 6rem var(--pad) 2.5rem;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding: 7rem var(--pad) 2.5rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   clip-path: inset(0 0 100% 0);
@@ -875,7 +877,7 @@ a.show__status.is-open:hover { background: var(--ember); border-color: var(--emb
 .social a:hover span { color: var(--ember); }
 @media (hover: hover) { .social a:hover { transform: translateX(4px); } }
 .footer__sub { display: flex; gap: 0.7rem; max-width: 420px; flex-wrap: wrap; }
-.footer__sub input {
+.footer__sub input[type="email"] {
   flex: 1; min-width: 200px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -884,7 +886,24 @@ a.show__status.is-open:hover { background: var(--ember); border-color: var(--emb
   color: var(--text);
   font-family: var(--font-sans);
 }
-.footer__sub input:focus { outline: none; border-color: var(--ember); }
+.footer__sub input[type="email"]:focus { outline: none; border-color: var(--ember); }
+.footer__consent {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.footer__consent input[type="checkbox"] {
+  margin-top: 0.2rem;
+  width: 16px; height: 16px;
+  accent-color: var(--ember);
+  flex-shrink: 0;
+  cursor: pointer;
+}
 .footer__sub-hint { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ember); margin-top: 0.8rem; min-height: 1em; }
 
 .footer__word {

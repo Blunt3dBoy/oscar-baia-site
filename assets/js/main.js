@@ -149,22 +149,39 @@
         `Event date: ${d.get("date") || "TBC"}\n\n` +
         `Details:\n${d.get("details") || ""}\n`;
       window.location.href =
-        `mailto:oscarbaia3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        `mailto:booking@oscarbaia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       const g = window.__i18nGet;
       $("#formHint").textContent = (g && g("form.sent")) || "Your email app should now be open.";
     });
   }
 
-  /* ---------- newsletter (front-end only stub) ---------- */
+  /* ---------- newsletter: double opt-in via /api/subscribe ---------- */
   const sub = $("#subForm");
   if (sub) {
-    sub.addEventListener("submit", (e) => {
+    sub.addEventListener("submit", async (e) => {
       e.preventDefault();
       const hint = $("#subHint");
       if (!sub.checkValidity()) { sub.reportValidity(); return; }
-      const g = window.__i18nGet;
-      hint.textContent = (g && g("footer.subok")) || "Thanks — connect a provider to store this.";
-      sub.reset();
+      const email = sub.email.value.trim();
+      const consent = sub.consent.checked;
+      const lang = window.__lang || "en";
+      const submitBtn = sub.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      hint.textContent = "";
+      try {
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ email, consent, lang }),
+        });
+        const data = await res.json().catch(() => null);
+        hint.textContent = data?.message || (res.ok ? "Check your inbox to confirm." : "Something went wrong — please try again.");
+        if (res.ok) sub.reset();
+      } catch (err) {
+        hint.textContent = "Couldn't reach the server — please try again shortly.";
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   }
 

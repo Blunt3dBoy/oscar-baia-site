@@ -83,14 +83,22 @@ this folder for 1 hour (not a year) so updates propagate.
 
 ## Booking form
 
-The form composes a `mailto:oscarbaia3@gmail.com` message (works everywhere,
+The form composes a `mailto:booking@oscarbaia.com` message (works everywhere,
 no backend). To capture submissions instead:
 
 - **Cloudflare Pages Forms** – add `data-static-form-name="bookings"` to the
   `<form>` (no code).
 - **Formspree / Basin** – set `action="https://formspree.io/f/XXXX"` +
   `method="POST"` and delete that form's `preventDefault()` block in `main.js`.
-- **Newsletter** – point `#subForm` at Mailchimp / Buttondown / ConvertKit.
+
+## Newsletter (double opt-in)
+
+The footer newsletter form has a required consent checkbox and posts to a
+real backend — `functions/api/subscribe.js` + `functions/api/confirm.js`
+(Cloudflare Pages Functions + KV), sending through Resend. Confirmation and
+welcome emails, accept/reject handling, bilingual copy — all built and
+deployed. **One remaining setup step** (Resend signup + DNS + API key) is in
+**`EMAIL.md`**.
 
 ## Fonts
 

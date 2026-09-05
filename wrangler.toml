@@ -1,0 +1,10 @@
+name = "oscar-baia"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-01"
+
+# Newsletter double opt-in state (functions/api/subscribe.js, functions/api/confirm.js).
+# The Resend API key is set separately as a secret:
+#   npx wrangler pages secret put RESEND_API_KEY --project-name oscar-baia
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "cff8d6b4581f463bb0622f3402b43c6b"

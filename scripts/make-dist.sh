@@ -11,7 +11,8 @@ node scripts/build.mjs 1>&2
 rm -rf dist && mkdir dist
 rsync -a --delete \
   --exclude 'dist/' --exclude 'node_modules/' --exclude 'scripts/' --exclude 'data/' \
-  --exclude 'README.md' --exclude 'DEPLOY.md' --exclude 'AUTOMATION.md' --exclude 'deploy.sh' \
+  --exclude 'functions/' --exclude 'wrangler.toml' \
+  --exclude 'README.md' --exclude 'DEPLOY.md' --exclude 'AUTOMATION.md' --exclude 'EMAIL.md' --exclude 'deploy.sh' \
   --exclude 'package.json' --exclude 'package-lock.json' \
   --exclude '.wrangler/' --exclude '.git/' --exclude '.github/' --exclude '.DS_Store' --exclude '.gitignore' \
   ./ ./dist/ 1>&2
