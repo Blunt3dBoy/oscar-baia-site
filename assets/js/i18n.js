@@ -90,6 +90,7 @@
       "footer.consent": "I agree to receive occasional emails from Oscar Baia (new sets, dates & info). You can unsubscribe anytime.",
       "footer.subok": "Thanks — connect a provider (see README) to store this.",
       "footer.rights": "Lisboa, Portugal.",
+      "footer.privacy": "Privacy",
       "footer.top": "Back to top ↑",
 
       "doc.title": "Oscar Baia — DJ & Producer, Lisbon",
@@ -178,6 +179,7 @@
       "footer.consent": "Aceito receber emails ocasionais do Oscar Baia (novos sets, datas e novidades). Pode cancelar quando quiser.",
       "footer.subok": "Obrigado — ligue um fornecedor (ver README) para guardar.",
       "footer.rights": "Lisboa, Portugal.",
+      "footer.privacy": "Privacidade",
       "footer.top": "Voltar ao topo ↑",
 
       "doc.title": "Oscar Baia — DJ & Produtor, Lisboa",
