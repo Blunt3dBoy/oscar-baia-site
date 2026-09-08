@@ -16,6 +16,8 @@
       "nav.about": "About",
       "nav.gallery": "Gallery",
       "nav.bookings": "Bookings",
+      "nav.top": "Top",
+      "nav.backtotop": "Back to top",
 
       "hero.kicker": "DJ · Lisboa, Portugal — since 1986",
       "hero.sub": "Four decades behind the decks. An eclectic selector, a three-deck technician, and a party icon of Lisbon nightlife.",
@@ -48,6 +50,8 @@
       "sounds.featdesc": "Recorded sets from clubs and open-airs — four decades of selection. Press play, then follow to catch the next one.",
       "sounds.followMc": "Follow on Mixcloud",
       "sounds.followSc": "Follow on SoundCloud",
+      "sounds.nowplaying": "Now playing",
+      "sounds.latest": "Latest set",
       "sounds.discTitle": "Discography",
       "sounds.discAll": "Full catalogue on Beatport",
 
@@ -60,6 +64,7 @@
       "shows.foot": "Follow on Shotgun for new dates →",
 
       "gallery.title": "Gallery",
+      "gallery.close": "Close",
 
       "bookings.title": "Bookings",
       "bookings.lead": "Available worldwide. For dates and enquiries, get in touch directly.",
@@ -99,6 +104,8 @@
       "nav.about": "Bio",
       "nav.gallery": "Galeria",
       "nav.bookings": "Contactos",
+      "nav.top": "Topo",
+      "nav.backtotop": "Voltar ao topo",
 
       "hero.kicker": "DJ · Lisboa, Portugal — desde 1986",
       "hero.sub": "Quatro décadas nas cabines. Um selector eclético, técnico de três decks e ícone das noites de Lisboa.",
@@ -131,6 +138,8 @@
       "sounds.featdesc": "Sets gravados em clubs e open-airs — quatro décadas de selecção. Carregue em play e siga para não perder o próximo.",
       "sounds.followMc": "Seguir no Mixcloud",
       "sounds.followSc": "Seguir no SoundCloud",
+      "sounds.nowplaying": "A tocar",
+      "sounds.latest": "Último set",
       "sounds.discTitle": "Discografia",
       "sounds.discAll": "Catálogo completo no Beatport",
 
@@ -143,6 +152,7 @@
       "shows.foot": "Segue no Shotgun para novas datas →",
 
       "gallery.title": "Galeria",
+      "gallery.close": "Fechar",
 
       "bookings.title": "Contactos",
       "bookings.lead": "Disponível para todo o mundo. Para datas e propostas, contacte diretamente.",

@@ -1,30 +1,82 @@
 {
-  "updated": "2026-09-04",
-  "source": "https://www.beatport.com/artist/oscar-baia/248069",
+  "updated": "2026-09-07",
+  "source": [
+    "https://www.beatport.com/artist/oscar-baia/248069",
+    "https://www.beatport.com/artist/dj-oscar-baia/114431"
+  ],
+  "note": "Artwork + 2-minute preview clips come from Beatport. Both artist profiles are covered.",
   "releases": [
     {
       "year": "2025",
       "title": "Desencontrados",
-      "meta": "Dkult & Oscar Baia · #thatechno",
+      "meta": "Dkult & Oscar Baia · From the Box VI · #thatechno",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/cd47c3aa-e3bc-43af-8b93-d2b0d3c9ba8f.jpg",
+      "preview": "https://geo-samples.beatport.com/track/5ac0f097-81f8-4283-bd96-f30050fb6f32.LOFI.mp3",
       "url": "https://www.beatport.com/release/from-the-box-vi/5741868"
     },
     {
       "year": "2025",
       "title": "I Am Worried",
-      "meta": "Lisbon Journeys Records · incl. DKult, SMASH (PT) & HYKAN remixes",
+      "meta": "Oscar Baia · Lisbon Journeys Records · incl. DKult, SMASH (PT) & HYKAN remixes",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/4429245e-67c0-412b-946a-3b5bb9c6085a.jpg",
+      "preview": "https://geo-samples.beatport.com/track/bca78ea8-ae07-40a5-8781-75984f9f4577.LOFI.mp3",
       "url": "https://www.beatport.com/release/i-am-worried/5096308"
     },
     {
       "year": "2013",
       "title": "Back To Kremlin",
       "meta": "Notorious B · Oscar Baia & Nuno E remix · Sunora Recordings",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/fd6811a8-5249-4b73-9613-878bbcce1794.jpg",
+      "preview": "https://geo-samples.beatport.com/track/98801e1c-66c0-424a-939b-b696d1b7cffa.LOFI.mp3",
       "url": "https://www.beatport.com/release/back-to-kremlin/1048393"
     },
     {
       "year": "2012",
       "title": "Xavi",
-      "meta": "Anonima · incl. Notoriousb & Miguel Matoz remixes",
+      "meta": "Oscar Baia · Anonima · incl. Notoriousb & Miguel Matoz remixes",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/6a032cbf-14ad-43ae-86cc-63b82faf2d33.jpg",
+      "preview": "https://geo-samples.beatport.com/track/159aa895-7625-41e6-973d-0e11289b843f.LOFI.mp3",
       "url": "https://www.beatport.com/release/xavi/997431"
+    },
+    {
+      "year": "2011",
+      "title": "Vaginazz (OB Suk M Mix)",
+      "meta": "DJ Oscar Baia & Dkult · Pandora Alternative Vol. 02 · Pandora Digital",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/0cd6393a-8a41-4870-b5db-a61bceb9202d.jpg",
+      "preview": "https://geo-samples.beatport.com/track/1ff31294-9764-4253-a213-05f49d5648e6.LOFI.mp3",
+      "url": "https://www.beatport.com/release/pandora-alternative-vol-02/836389"
+    },
+    {
+      "year": "2010",
+      "title": "People Around",
+      "meta": "Siul Silva · DJ Oscar Baia, Dkult & Edu remix · Pandora Digital",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/9550371d-0148-4c49-8a38-cf3241cded93.jpg",
+      "preview": "https://geo-samples.beatport.com/track/ecb30f66-21f7-470c-b2da-d71f3252be8b.LOFI.mp3",
+      "url": "https://www.beatport.com/release/people-around/263149"
+    },
+    {
+      "year": "2009",
+      "title": "Forever",
+      "meta": "Ricardo Espino · DJ Oscar Baia & DKult remix · Going To Remix · Pandora Digital",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/1e928d5a-6a64-4c70-8558-5e398577b857.jpg",
+      "preview": "https://geo-samples.beatport.com/track/ae1b6c41-4461-441c-858a-9207b8aef2eb.LOFI.mp3",
+      "url": "https://www.beatport.com/release/going-to-remix/201024"
+    },
+    {
+      "year": "2009",
+      "title": "Show Me How You Dance",
+      "meta": "Akram Chekki · DJ Oscar Baia & DKult remix · Clubbing Vol. 3 · Pandora Digital",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/c9d45c78-c745-4cae-9814-64fdedb7a193.jpg",
+      "preview": "https://geo-samples.beatport.com/track/b30d6a18-e2ab-4d25-99e2-4085460dd726.LOFI.mp3",
+      "url": "https://www.beatport.com/release/clubbing-vol-3/196041"
+    },
+    {
+      "year": "2009",
+      "title": "Vaginazz",
+      "meta": "DJ Oscar Baia & Dkult · Pandora Digital Records",
+      "art": "https://geo-media.beatport.com/image_size/1400x1400/cb68d157-fb50-4728-b876-37e5668572cd.jpg",
+      "preview": "https://geo-samples.beatport.com/track/21dffc72-0844-482e-ab58-5a97096ffc58.LOFI.mp3",
+      "url": "https://www.beatport.com/release/vaginazz/189505"
     }
   ]
 }

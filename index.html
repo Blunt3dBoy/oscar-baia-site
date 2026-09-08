@@ -74,6 +74,7 @@
       <a href="#shows" data-i18n="nav.shows">Events</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#hero" class="nav__top" data-i18n="nav.top">Top</a>
     </nav>
 
     <div class="nav__right">
@@ -100,6 +101,7 @@
       <a href="#about"><span class="mobile-menu__idx">05</span> <span data-i18n="nav.about">About</span></a>
       <a href="#gallery"><span class="mobile-menu__idx">06</span> <span data-i18n="nav.gallery">Gallery</span></a>
       <a href="#bookings"><span class="mobile-menu__idx">07</span> <span data-i18n="nav.bookings">Bookings</span></a>
+      <a href="#hero" class="mobile-menu__top"><span class="mobile-menu__idx" aria-hidden="true">↑</span> <span data-i18n="nav.backtotop">Back to top</span></a>
     </nav>
     <div class="mobile-menu__foot">
       <div class="langswitch langswitch--lg" role="group" aria-label="Language / Idioma">
@@ -128,18 +130,20 @@
     <section class="hero" id="hero">
       <figure class="hero__photo" aria-hidden="true">
         <div class="hero__photo-mask">
-          <img src="/assets/img/oscar-hero.jpg" alt="" width="1400" height="933" fetchpriority="high" />
+          <img src="/assets/img/oscar-hero.jpg?v=2" alt="" width="1171" height="765" fetchpriority="high" />
         </div>
       </figure>
 
       <div class="hero__inner">
-        <p class="hero__kicker">
-          <span class="dot"></span> <span data-i18n="hero.kicker">DJ · Lisboa, Portugal — since 1986</span>
-        </p>
-        <h1 class="hero__title">
-          <span class="line"><span class="word">Oscar</span></span>
-          <span class="line"><span class="word word--outline">Baia</span></span>
-        </h1>
+        <div class="hero__head">
+          <p class="hero__kicker">
+            <span class="dot"></span> <span data-i18n="hero.kicker">DJ · Lisboa, Portugal — since 1986</span>
+          </p>
+          <h1 class="hero__title">
+            <span class="line"><span class="word">Oscar</span></span>
+            <span class="line"><span class="word word--outline">Baia</span></span>
+          </h1>
+        </div>
         <p class="hero__sub" data-i18n="hero.sub">
           Four decades behind the decks. An eclectic selector, a three-deck
           technician, and a party icon of Lisbon nightlife.
@@ -233,6 +237,12 @@
         <h2 class="section__title" data-i18n="sounds.title">Sets &amp; Shows</h2>
       </div>
 
+      <div class="mixwheel" id="mixwheel" hidden aria-label="Mixcloud sets — drag to browse, click to play">
+        <div class="mixwheel__scroller" id="mixScroller">
+          <div class="mixwheel__track" id="mixTrack"></div>
+        </div>
+      </div>
+
       <article class="feature" data-reveal>
         <div class="feature__meta">
           <p class="kicker" data-i18n="sounds.featkicker">Listen</p>
@@ -250,11 +260,21 @@
         </div>
 
         <div class="players">
-          <div class="players__panel">
-            <iframe title="Oscar Baia on Mixcloud" loading="lazy"
-              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&autoplay=0&feed=%2Foscarbaia%2F"
-              width="100%" height="400" frameborder="0"
-              allow="autoplay; encrypted-media; fullscreen"></iframe>
+          <div class="nowplaying" id="nowPlaying">
+            <div class="nowplaying__head">
+              <span class="nowplaying__art"><img id="npArt" alt="" width="112" height="112" /></span>
+              <span class="nowplaying__info">
+                <span class="nowplaying__kicker" data-i18n="sounds.nowplaying">Now playing</span>
+                <span class="nowplaying__title" id="npTitle" data-i18n="sounds.latest">Latest set</span>
+              </span>
+              <a class="nowplaying__ext" id="npLink" href="https://www.mixcloud.com/oscarbaia/" target="_blank" rel="noopener" aria-label="Open on Mixcloud"><span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="players__panel">
+              <iframe id="mixPlayer" title="Oscar Baia on Mixcloud" loading="lazy"
+                src="https://www.mixcloud.com/widget/iframe/?mini=1&hide_cover=1&hide_artwork=1&light=0&autoplay=0&feed=%2Foscarbaia%2F"
+                width="100%" height="60" frameborder="0"
+                allow="autoplay; encrypted-media; fullscreen"></iframe>
+            </div>
           </div>
           <noscript>
             <a href="https://www.mixcloud.com/oscarbaia/">Listen to Oscar Baia on Mixcloud</a>
@@ -271,37 +291,104 @@
         </div>
         <!-- auto:releases (regenerated from data/releases.json by scripts/build.mjs — do not hand-edit) -->
         <ul class="releaselist">
-          <li>
-            <a href="https://www.beatport.com/release/from-the-box-vi/5741868" target="_blank" rel="noopener">
-              <span class="releaselist__year">2025</span>
-              <span class="releaselist__name">Desencontrados</span>
-              <span class="releaselist__meta">Dkult &amp; Oscar Baia · #thatechno</span>
-              <span class="releaselist__go" aria-hidden="true">↗</span>
-            </a>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/5ac0f097-81f8-4283-bd96-f30050fb6f32.LOFI.mp3" data-title="Desencontrados" aria-label="Play preview: Desencontrados">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/cd47c3aa-e3bc-43af-8b93-d2b0d3c9ba8f.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Desencontrados</span>
+                <span class="release__meta">Dkult &amp; Oscar Baia · From the Box VI · #thatechno</span>
+              </span>
+              <span class="release__year">2025</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/from-the-box-vi/5741868" target="_blank" rel="noopener" aria-label="Desencontrados on Beatport"><span aria-hidden="true">↗</span></a>
           </li>
-          <li>
-            <a href="https://www.beatport.com/release/i-am-worried/5096308" target="_blank" rel="noopener">
-              <span class="releaselist__year">2025</span>
-              <span class="releaselist__name">I Am Worried</span>
-              <span class="releaselist__meta">Lisbon Journeys Records · incl. DKult, SMASH (PT) &amp; HYKAN remixes</span>
-              <span class="releaselist__go" aria-hidden="true">↗</span>
-            </a>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/bca78ea8-ae07-40a5-8781-75984f9f4577.LOFI.mp3" data-title="I Am Worried" aria-label="Play preview: I Am Worried">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/4429245e-67c0-412b-946a-3b5bb9c6085a.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">I Am Worried</span>
+                <span class="release__meta">Oscar Baia · Lisbon Journeys Records · incl. DKult, SMASH (PT) &amp; HYKAN remixes</span>
+              </span>
+              <span class="release__year">2025</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/i-am-worried/5096308" target="_blank" rel="noopener" aria-label="I Am Worried on Beatport"><span aria-hidden="true">↗</span></a>
           </li>
-          <li>
-            <a href="https://www.beatport.com/release/back-to-kremlin/1048393" target="_blank" rel="noopener">
-              <span class="releaselist__year">2013</span>
-              <span class="releaselist__name">Back To Kremlin</span>
-              <span class="releaselist__meta">Notorious B · Oscar Baia &amp; Nuno E remix · Sunora Recordings</span>
-              <span class="releaselist__go" aria-hidden="true">↗</span>
-            </a>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/98801e1c-66c0-424a-939b-b696d1b7cffa.LOFI.mp3" data-title="Back To Kremlin" aria-label="Play preview: Back To Kremlin">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/fd6811a8-5249-4b73-9613-878bbcce1794.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Back To Kremlin</span>
+                <span class="release__meta">Notorious B · Oscar Baia &amp; Nuno E remix · Sunora Recordings</span>
+              </span>
+              <span class="release__year">2013</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/back-to-kremlin/1048393" target="_blank" rel="noopener" aria-label="Back To Kremlin on Beatport"><span aria-hidden="true">↗</span></a>
           </li>
-          <li>
-            <a href="https://www.beatport.com/release/xavi/997431" target="_blank" rel="noopener">
-              <span class="releaselist__year">2012</span>
-              <span class="releaselist__name">Xavi</span>
-              <span class="releaselist__meta">Anonima · incl. Notoriousb &amp; Miguel Matoz remixes</span>
-              <span class="releaselist__go" aria-hidden="true">↗</span>
-            </a>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/159aa895-7625-41e6-973d-0e11289b843f.LOFI.mp3" data-title="Xavi" aria-label="Play preview: Xavi">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/6a032cbf-14ad-43ae-86cc-63b82faf2d33.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Xavi</span>
+                <span class="release__meta">Oscar Baia · Anonima · incl. Notoriousb &amp; Miguel Matoz remixes</span>
+              </span>
+              <span class="release__year">2012</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/xavi/997431" target="_blank" rel="noopener" aria-label="Xavi on Beatport"><span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/1ff31294-9764-4253-a213-05f49d5648e6.LOFI.mp3" data-title="Vaginazz (OB Suk M Mix)" aria-label="Play preview: Vaginazz (OB Suk M Mix)">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/0cd6393a-8a41-4870-b5db-a61bceb9202d.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Vaginazz (OB Suk M Mix)</span>
+                <span class="release__meta">DJ Oscar Baia &amp; Dkult · Pandora Alternative Vol. 02 · Pandora Digital</span>
+              </span>
+              <span class="release__year">2011</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/pandora-alternative-vol-02/836389" target="_blank" rel="noopener" aria-label="Vaginazz (OB Suk M Mix) on Beatport"><span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/ecb30f66-21f7-470c-b2da-d71f3252be8b.LOFI.mp3" data-title="People Around" aria-label="Play preview: People Around">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/9550371d-0148-4c49-8a38-cf3241cded93.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">People Around</span>
+                <span class="release__meta">Siul Silva · DJ Oscar Baia, Dkult &amp; Edu remix · Pandora Digital</span>
+              </span>
+              <span class="release__year">2010</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/people-around/263149" target="_blank" rel="noopener" aria-label="People Around on Beatport"><span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/ae1b6c41-4461-441c-858a-9207b8aef2eb.LOFI.mp3" data-title="Forever" aria-label="Play preview: Forever">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/1e928d5a-6a64-4c70-8558-5e398577b857.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Forever</span>
+                <span class="release__meta">Ricardo Espino · DJ Oscar Baia &amp; DKult remix · Going To Remix · Pandora Digital</span>
+              </span>
+              <span class="release__year">2009</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/going-to-remix/201024" target="_blank" rel="noopener" aria-label="Forever on Beatport"><span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/b30d6a18-e2ab-4d25-99e2-4085460dd726.LOFI.mp3" data-title="Show Me How You Dance" aria-label="Play preview: Show Me How You Dance">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/c9d45c78-c745-4cae-9814-64fdedb7a193.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Show Me How You Dance</span>
+                <span class="release__meta">Akram Chekki · DJ Oscar Baia &amp; DKult remix · Clubbing Vol. 3 · Pandora Digital</span>
+              </span>
+              <span class="release__year">2009</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/clubbing-vol-3/196041" target="_blank" rel="noopener" aria-label="Show Me How You Dance on Beatport"><span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="release">
+            <button type="button" class="release__play" data-preview="https://geo-samples.beatport.com/track/21dffc72-0844-482e-ab58-5a97096ffc58.LOFI.mp3" data-title="Vaginazz" aria-label="Play preview: Vaginazz">
+              <span class="release__art"><img src="https://geo-media.beatport.com/image_size/1400x1400/cb68d157-fb50-4728-b876-37e5668572cd.jpg" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>
+              <span class="release__text">
+                <span class="release__name">Vaginazz</span>
+                <span class="release__meta">DJ Oscar Baia &amp; Dkult · Pandora Digital Records</span>
+              </span>
+              <span class="release__year">2009</span>
+            </button>
+            <a class="release__go" href="https://www.beatport.com/release/vaginazz/189505" target="_blank" rel="noopener" aria-label="Vaginazz on Beatport"><span aria-hidden="true">↗</span></a>
           </li>
         </ul>
       <!-- /auto:releases -->
@@ -499,6 +586,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="https://widget.mixcloud.com/media/js/widgetApi.js" defer></script>
   <script src="/assets/js/i18n.js?v=202609040230" defer></script>
   <script src="/assets/js/main.js?v=202609040230" defer></script>
 </body>

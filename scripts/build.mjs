@@ -101,13 +101,21 @@ function renderReleases(data) {
   const rel = [...data.releases].sort((a, b) => String(b.year).localeCompare(String(a.year)));
   const lines = [`        <ul class="releaselist">`];
   for (const r of rel) {
-    lines.push(`          <li>`);
-    lines.push(`            <a href="${esc(r.url)}" target="_blank" rel="noopener">`);
-    lines.push(`              <span class="releaselist__year">${esc(r.year)}</span>`);
-    lines.push(`              <span class="releaselist__name">${esc(r.title)}</span>`);
-    lines.push(`              <span class="releaselist__meta">${esc(r.meta)}</span>`);
-    lines.push(`              <span class="releaselist__go" aria-hidden="true">↗</span>`);
-    lines.push(`            </a>`);
+    const playable = r.preview ? ` data-preview="${esc(r.preview)}"` : "";
+    lines.push(`          <li class="release">`);
+    lines.push(`            <button type="button" class="release__play"${playable} data-title="${esc(r.title)}" aria-label="Play preview: ${esc(r.title)}">`);
+    if (r.art) {
+      lines.push(`              <span class="release__art"><img src="${esc(r.art)}" alt="" width="300" height="300" loading="lazy" decoding="async" /></span>`);
+    } else {
+      lines.push(`              <span class="release__art"></span>`);
+    }
+    lines.push(`              <span class="release__text">`);
+    lines.push(`                <span class="release__name">${esc(r.title)}</span>`);
+    lines.push(`                <span class="release__meta">${esc(r.meta)}</span>`);
+    lines.push(`              </span>`);
+    lines.push(`              <span class="release__year">${esc(r.year)}</span>`);
+    lines.push(`            </button>`);
+    lines.push(`            <a class="release__go" href="${esc(r.url)}" target="_blank" rel="noopener" aria-label="${esc(r.title)} on Beatport"><span aria-hidden="true">↗</span></a>`);
     lines.push(`          </li>`);
   }
   lines.push(`        </ul>`);

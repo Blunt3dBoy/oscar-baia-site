@@ -8,11 +8,9 @@ VER="$(date +%Y%m%d%H%M%S)$(( RANDOM % 100 ))"
 
 node scripts/build.mjs 1>&2
 
-# data/ IS deployed: the mobile app reads /data/events.json and /data/releases.json
-# at runtime. Removing it from the excludes below is what makes those URLs resolve.
 rm -rf dist && mkdir dist
 rsync -a --delete \
-  --exclude 'dist/' --exclude 'node_modules/' --exclude 'scripts/' \
+  --exclude 'dist/' --exclude 'node_modules/' --exclude 'scripts/' --exclude 'data/' \
   --exclude 'functions/' --exclude 'wrangler.toml' \
   --exclude 'README.md' --exclude 'DEPLOY.md' --exclude 'AUTOMATION.md' --exclude 'EMAIL.md' --exclude 'deploy.sh' \
   --exclude 'package.json' --exclude 'package-lock.json' \
