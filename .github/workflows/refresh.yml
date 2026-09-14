@@ -2,7 +2,7 @@ name: Refresh & deploy
 
 on:
   schedule:
-    # Every Monday 06:00 UTC — scrape Shotgun + Beatport, rebuild, deploy
+    # Every Monday 06:00 UTC — refresh Shotgun events, check links, publish and back up
     - cron: "0 6 * * 1"
   workflow_dispatch: {}       # manual "Run workflow" button
   push:
@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       # Playwright only needed for the scheduled/manual scrape
       - name: Install Playwright
@@ -54,12 +54,34 @@ jobs:
             echo "No changes to commit."
           fi
 
+      - name: Check external links
+        run: python3 scripts/check-links.py
+
       - name: Build dist
         run: scripts/make-dist.sh
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
+          wranglerVersion: "4.131.2"
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name oscar-baia --branch main --commit-dirty=true
+
+      - name: Verify live website
+        run: curl --fail --silent --show-error --retry 3 -o /dev/null https://oscarbaia.com
+
+      - name: Create and verify cloud backup
+        if: always()
+        run: python3 scripts/backup.py
+
+      - name: Save backup and link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oscar-baia-weekly-backup-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            backup-output/
+            link-report.md
+          retention-days: 30
+          if-no-files-found: error

@@ -1,0 +1,20 @@
+name: Backup for NAS
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create and verify backup
+        run: python3 scripts/backup.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oscar-baia-nas-backup-${{ github.run_id }}
+          path: backup-output/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Download instructions
+        run: echo 'Download the backup artifact at the bottom of this run page. Extract it and copy the website ZIP to your NAS shared folder. Secrets and subscriber data are not included.' >> "$GITHUB_STEP_SUMMARY"
